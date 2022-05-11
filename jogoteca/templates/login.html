@@ -1,0 +1,15 @@
+<!--Envia o bloco para o arquivo template.html-->
+{% extends "template.html" %}
+
+<!--Define o conteúdo que será enviado para o arquivo template-->
+{% block conteudo %}
+
+<!--Conteúdo do formulário de login-->
+        <form method="POST" action="{{ url_for('autenticar') }}">
+            <input type="hidden" name="proxima" value="{{ proxima }}">
+            <p><label>Nome de usuário:</label> <input class="form-control" type="text" name="usuario" required></p>
+            <p><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
+            <p><button class="btn btn-primary" type="submit">Entrar</button></p>
+        </form>
+{% endblock %}
+
